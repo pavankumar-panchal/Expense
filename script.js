@@ -1,16 +1,16 @@
 // ---------- State ----------
 let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
-const form = document.getElementById('expenseForm');
-const list = document.getElementById('expenseList');
+const form  = document.getElementById('expenseForm');
+const list  = document.getElementById('expenseList');
 const totalEl = document.getElementById('total');
 const filterCat = document.getElementById('filterCategory');
 
 // ---------- Utility ----------
 const save = () => localStorage.setItem('expenses', JSON.stringify(expenses));
-const fmt = (n) => '$' + (+n).toFixed(2);
+const fmt  = (n) => '₹' + (+n).toFixed(2);
 const today = () => new Date().toISOString().substr(0, 10);
 
-// Set default date
+// Default date
 document.getElementById('date').value = today();
 
 // ---------- Render ----------
